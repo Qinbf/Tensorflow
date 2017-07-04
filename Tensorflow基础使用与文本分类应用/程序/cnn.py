@@ -105,6 +105,9 @@ x = np.array(list(vocab_processor.fit_transform(x_text)))
 print("x_shape:",x.shape)
 print("y_shape:",y.shape)
 
+# 保存字典
+vocab_processor.save("vocab_dict")
+
 # Split train/test set
 # 数据集切分为两部分，训练集和验证集
 dev_sample_index = -1 * int(FLAGS.dev_sample_percentage * float(len(y)))
@@ -302,16 +305,3 @@ with tf.Session() as sess:
 
 
 # In[ ]:
-
-
-
-
-# In[ ]:
-
-eval([([1, 2, 3, 4, 5], [4, 5, 6, 7])])
-
-
-# In[ ]:
-
-
-
